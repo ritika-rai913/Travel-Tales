@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunset in Bali: A Journey to Paradise - Travel Tales</title>
+    <style>
+        /* Reset and base styles */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        /* Header */
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+        }
+        /* Main Content */
+        
+        .main-content {
+            padding: 6rem 2rem 4rem;
+            /* Extra top padding for fixed header */
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        
+        .main-content h1 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .main-content h2 {
+            font-size: 2rem;
+            color: #764ba2;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .main-content img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .main-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight {
+            background: #f0f8ff;
+            padding: 1rem;
+            border-left: 5px solid #667eea;
+            margin: 1.5rem 0;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-top: 2rem;
+        }
+        
+        .back-btn:hover {
+            background: #5a67d8;
+        }
+        /* Footer */
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        /* Responsive */
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #667eea;
+                padding: 1rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .main-content h1 {
+                font-size: 2rem;
+            }
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* GOOGLE TRANSLATE FIX */
+        
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+        
+        body {
+            top: 0 !important;
+        }
+        
+        #google_translate_element {
+            margin-left: 15px;
+        }
+        
+        .goog-te-combo {
+            padding: 6px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Travel Tales</div>
+
+
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- LANGUAGE BUTTON -->
+        <div id="google_translate_element"></div>
+    </header>
+
+
+    <main class="main-content">
+        <h1>Sunset in Bali: A Journey to Paradise</h1>
+        <img src="v1.jpg" alt="Bali Sunset">
+        <p>Bali, the Island of the Gods, has always been a dream destination for travelers seeking a blend of natural beauty, rich culture, and spiritual serenity. My journey to Bali began with a long flight from the bustling city life, but as soon as I
+            stepped off the plane in Denpasar, the warm tropical air and vibrant energy welcomed me like an old friend. This island isn't just a vacation spot—it's a transformative experience that lingers in your memories forever.</p>
+
+        <h2>Arrival and First Impressions</h2>
+        <p>Touching down in Bali felt like entering a different world. The Ngurah Rai International Airport buzzed with the excitement of arrivals, and the scent of frangipani flowers filled the air. I rented a scooter right away— the quintessential way
+            to explore Bali's winding roads. My first stop was a homestay in Seminyak, where the beachfront vibe was electric. Walking along the sandy shores at sunset, I realized Bali's magic starts the moment you arrive. The locals' warm "Selamat datang"
+            (welcome) greetings set the tone for an unforgettable adventure.</p>
+
+        <h2>Exploring Ubud: The Cultural Heart</h2>
+        <img src="r1.jpg" alt="Ubud Rice Terraces" title="Ubud Rice Terraces">
+        <p>The adventure truly began in Ubud, Bali's artistic and spiritual center. Nestled amidst lush rice terraces, Ubud is a haven for art lovers and nature enthusiasts. I spent mornings wandering through the Monkey Forest, where cheeky macaques swung
+            from ancient trees and playfully snatched bananas from tourists. The forest's dense canopy and hidden temples created an atmosphere of mystery and wonder.</p>
+        <p>In the afternoons, I visited the iconic Tegallalang Rice Terraces. These emerald fields, cascading like a living painting, are a UNESCO World Heritage site. Hiking the narrow paths between the terraces, I felt a deep connection to Bali's agrarian
+            roots. The farmers working the fields shared stories of their traditions, and I even tried my hand at planting rice—a humbling experience that taught me about patience and harmony with nature.</p>
+
+        <div class="image-gallery">
+            <img src="bb1.jpg" title="Monkey Forest">
+            <img src="bb2.jpg" title="Rice Terrace">
+            <img src="bb3.jpg" title="Bali temple">
+        </div>
+
+        <h2>The Iconic Sunset at Uluwatu</h2>
+        <p>As the sun began to dip toward the horizon, I made my way to the west coast for what Bali is truly famous for: its breathtaking sunsets. Perched on a cliff at Uluwatu Temple, I watched as the sky transformed into a canvas of fiery oranges, deep
+            purples, and golden hues. The Indian Ocean roared below, crashing against the rocks in a symphony of nature's power.</p>
+        <p>The experience was heightened by the traditional Kecak fire dance, performed by a circle of men chanting rhythmically as the sun disappeared. It was a moment of pure bliss, where time seemed to stand still, and the worries of the world melted
+            away. Watching the sunset here isn't just about the visuals—it's about feeling the spiritual energy of Bali, where the boundary between earth and sky blurs.</p>
+        <div class="highlight">
+            <p><strong>Pro Tip:</strong> Arrive early to secure a spot on the cliff. The temple grounds are sacred, so dress modestly and remove shoes when entering. The dance starts around 6 PM, timed perfectly with the sunset.</p>
+        </div>
+
+        <h2>Adventures Beyond the Sunset</h2>
+        <p>Beyond the sunsets, Bali offered endless explorations. I snorkeled in the crystal-clear waters of Nusa Penida, where vibrant coral reefs and marine life created an underwater paradise. Hiking volcanic Mount Batur at dawn was another highlight—watching
+            the sunrise from the summit, with steaming lava fields below, was awe-inspiring.</p>
+        <p>The island's cuisine was a culinary delight. From spicy nasi goreng (fried rice) to fresh tropical fruits like rambutan and mangosteen, every meal was an adventure. I learned to make Balinese sambal at a cooking class, discovering the bold flavors
+            that define Indonesian food.</p>
+        <div class="image-gallery">
+            <img src="bs1.jpg" alt="Snorkeling in Bali" title="Snorkeling in Bali">
+            <img src="BS2.jpg" alt="Mount Batur Sunrise" title="Mount Batur Sunrise">
+            <img src="bs3.jpg" alt="Bali Cuisine" title="Bali Cuisine">
+        </div>
+
+        <h2>Cultural Insights and Local Encounters</h2>
+        <p>It's the people and their deep-rooted traditions that left the biggest impression on me. Participating in a Balinese ceremony, with its intricate offerings of flowers and incense, reminded me of the island's Hindu heritage. Locals shared stories
+            of their daily rituals, from morning prayers to community festivals.</p>
+        <p>One evening, I joined a village for a traditional Balinese dance performance. The grace and storytelling in every movement were mesmerizing. These encounters taught me that Bali's true beauty lies in its culture— a blend of spirituality, art,
+            and community that has endured for centuries.</p>
+
+        <h2>Travel Tips for Your Bali Journey</h2>
+        <ul style="margin-bottom: 1.5rem;">
+            <li><strong>Best Time to Visit:</strong> Dry season (April to September) for sunny weather and fewer crowds.</li>
+            <li><strong>Getting Around:</strong> Rent a scooter for freedom, but drive cautiously—traffic can be chaotic.</li>
+            <li><strong>Sustainability:</strong> Support eco-friendly stays and avoid single-use plastics to preserve Bali's beauty.</li>
+            <li><strong>Respect Customs:</strong> Cover up at temples, and embrace "Bali time"—there's no rush here.</li>
+            <li><strong>Budgeting:</strong> Expect $50-100/day for mid-range travel, including food and activities.</li>
+        </ul>
+        <p>If you're planning a trip to Bali, remember to respect the local customs, support sustainable tourism, and embrace the "Bali time" philosophy—there's no rush on this paradise island. Bali isn't just a place; it's an experience that lingers in
+            your soul long after you leave.</p>
+
+        <a href="Travel blog.html" class="back-btn">Back to Blog</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Travel Tales. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,ur,fr,de,es,ja,ko,zh',
+                    autoDisplay: false
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

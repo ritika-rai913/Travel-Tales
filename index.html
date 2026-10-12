@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tales - Explore the World</title>
+    <style>
+        /* Reset and base styles */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4
+        }
+        /* Header */
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+        }
+        /* Hero Section */
+        
+        .hero {
+            background: url('gp1.gif') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: dark blue;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            background: #ffd700;
+            color: #333;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            background: #ffed4e;
+        }
+        /* Sections */
+        
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #667eea;
+        }
+        /* About Section */
+        
+        .about-section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        /* Blog Section */
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .post {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .post h3 {
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .post p {
+            padding: 0 1rem;
+        }
+        
+        .read-more {
+            display: block;
+            padding: 1rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Gallery Section */
+        
+        .slider {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .slides {
+            display: flex;
+            transition: transform 0.5s;
+        }
+        
+        .slides img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+        
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        .prev {
+            left: 0;
+        }
+        
+        .next {
+            right: 0;
+        }
+        /* Contact Section */
+        
+        #contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #contact-form input,
+        #contact-form textarea {
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        #contact-form button {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        #contact-form button:hover {
+            background: #5a67d8;
+        }
+        /* Footer */
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        /* Responsive */
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #667eea;
+                padding: 1rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        #languageSwitcher {
+            padding: 6px 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        /* GOOGLE TRANSLATE FIX */
+        
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+        
+        body {
+            top: 0 !important;
+        }
+        
+        #google_translate_element {
+            margin-left: 15px;
+        }
+        
+        .goog-te-combo {
+            padding: 6px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Travel Tales</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- LANGUAGE BUTTON -->
+        <div id="google_translate_element"></div>
+    </header>
+
+
+
+    <section id="home" class="hero">
+        <h1 id="hero-title">Discover Hidden Gems Around the Globe</h1>
+        <p id="hero-desc">Join me on adventures from serene beaches to bustling cities.</p>
+        <a href="#blog" class="btn" id="hero-btn">Read My Stories</a>
+
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Travel Tales</h2>
+        <p>Welcome to Travel Tales, your gateway to the world's most captivating destinations! I'm Risha, a passionate traveler and storyteller who believes that every journey holds a unique tale waiting to be shared. With over a decade of exploring diverse
+            cultures, breathtaking landscapes, and hidden wonders, I started this blog to inspire fellow wanderers like you.</p>
+        <p>From the sun-kissed shores of Bali to the snow-capped peaks of the Alps, my posts capture the essence of travel— the thrill of discovery, the warmth of local encounters, and the lessons learned along the way. Whether you're planning your next
+            adventure or simply dreaming of far-off places, Travel Tales is here to fuel your wanderlust with vivid stories, practical tips, and stunning visuals.</p>
+        <p>Join the community of explorers and let's embark on unforgettable journeys together. Safe travels!</p>
+    </section>
+
+    <section id="blog" class="blog-section">
+        <h2>Latest Travels</h2>
+        <div class="blog-posts">
+            <article class="post">
+                <img src="v1.jpg" alt="Beach">
+                <h3>Sunset in Bali</h3>
+                <p>Exploring the vibrant culture and stunning landscapes of Indonesia's paradise island.</p>
+                <a href="bali.html" class="read-more">Read More</a>
+            </article>
+            <article class="post">
+                <img src="v2.png" alt="Mountain">
+                <h3>Hiking the Alps</h3>
+                <p>A thrilling trek through Europe's majestic peaks, filled with breathtaking views.</p>
+                <a href="moun.html" class="read-more">Read More</a>
+            </article>
+            <article class="post">
+                <img src="v3.jpg">
+                <h3>Streets of Tokyo</h3>
+                <p>Diving into the neon-lit chaos and culinary delights of Japan's capital.</p>
+                <a href="tokyo.html" class="read-more">Read More</a>
+            </article>
+            <article class="post">
+                <img src="sa1.jpg" alt="Sakura">
+                <h3>Sakura festival in Japan</h3>
+                <p>Sakura Festival in Japan: A Celebration of Blossoms and Beauty.</p>
+                <a href="fes.html" class="read-more">Read More</a>
+            </article>
+            <article class="post">
+                <img src="bu1.jpg" alt="Busan">
+                <h3>Busan City</h3>
+                <p>Busan City, South Korea: Where Beaches Meet Culture</p>
+                <a href="busan.html" class="read-more">Read More</a>
+            </article>
+            <article class="post">
+                <img src="k1.jpg" alt="karachi">
+                <h3>Karachi, Pakistan</h3>
+                <p>Karachi, Pakistan: The City of Lights and Contrasts</p>
+                <a href="kar.html" class="read-more">Read More</a>
+            </article>
+
+
+
+
+
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <h2>Photo Gallery</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="b4.jpg" alt="Bali Beach">
+                <img src="b6.jpg" alt="Alps Mountain">
+                <img src="b5.jpg" alt="Tokyo City">
+
+                <img src="ss1.jpg" alt="busan">
+                <img src="ts1.jpg" alt="Tokyo City">
+                <img src="pp3.jpg" alt="Tokyo City">
+                <img src="r1.jpg" alt="Tokyo City">
+                <img src="m22.jpg" alt="Tokyo City">
+
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Get in Touch</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Travel Tales. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Image slider
+        let slideIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = slides.children.length;
+
+        function showSlide(index) {
+            if (index >= totalSlides) slideIndex = 0;
+            if (index < 0) slideIndex = totalSlides - 1;
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        function changeSlide(direction) {
+            slideIndex += direction;
+            showSlide(slideIndex);
+        }
+
+        // Auto-advance slider every 3 seconds
+        setInterval(() => {
+            slideIndex++;
+            showSlide(slideIndex);
+        }, 3000);
+
+        // Form submission (basic alert for demo)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+        });
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,ur,fr,de,es,ja,ko,zh',
+                    autoDisplay: false
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
